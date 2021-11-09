@@ -17,3 +17,7 @@
 .looped-arr-names {
   text-align: left;
 }
+
+li:hover {
+  cursor: pointer;
+}

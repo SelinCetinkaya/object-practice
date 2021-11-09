@@ -1,6 +1,6 @@
 import React from "react";
 
-function Array() {
+function Array({ setHeaderName }) {
   const Arr = [
     {
       name: "selin",
@@ -16,11 +16,16 @@ function Array() {
     },
   ];
 
+  const handleClick = (e) => {
+    console.log(e.target.firstChild.data);
+    setHeaderName(e.target.firstChild.data);
+  };
+
   return (
     <div className="looped-arr-names">
       <ul>
         {Arr.map((el) => (
-          <li>{el.name}</li>
+          <li onClick={handleClick}>{el.name}</li>
         ))}
       </ul>
     </div>

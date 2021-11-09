@@ -1,9 +1,32 @@
 import React from "react";
 
-function NestedObject() {
+function NestedObject({ setHeaderName }) {
+  const obj = {
+    person1: {
+      name: "cetinkaya",
+    },
+    person2: {
+      name: "mcgill",
+    },
+    person3: {
+      name: "peterson",
+    },
+  };
+
+  const objArr = Object.values(obj);
+
+  const handleClick = (e) => {
+    console.log(e.target.firstChild.data);
+    setHeaderName(e.target.firstChild.data);
+  };
+
   return (
-    <div classname="looped-obj-names">
-      <h1>hello (object component)</h1>
+    <div className="looped-obj-names">
+      <ul>
+        {objArr.map((el) => (
+          <li onClick={handleClick}>{el.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
