@@ -8,7 +8,7 @@ function App() {
   const [headerName, setHeaderName] = useState("click on a name to change");
 
   useEffect(() => {
-    console.log("changed");
+    console.log("changed")
   }, [headerName]);
 
   return (
